@@ -6,37 +6,6 @@
 
 ---
 
-# Projects
-
-## Areas: GPU, Graphics, Tech Artist
-
-## Zbrush Clone 
-- Languages: C++ for 3D modeling software. Python for scripting and plugins.
-- Graphics Libraries/API: OpenGL, DirectX, Vulkan, or Metal to handle rendering.
-- Physics and Math Libraries: Eigen for linear algebra and Bullet for physics simulations.
-- IDE: [Visual Studio](https://visualstudio.microsoft.com/) CLion
-- GUI: [Qt](https://www.qt.io/), [CMake](https://cmake.org/) or [imgui](https://github.com/ocornut/imgui)
-
-### Algorithms:
-- Catmull–Clark subdivision surface (GPU Gems)
-- Sculpting and smoothing
-	- Mesh Relaxation: A New Technique for Improving Triangulations, W. Frey, D. Field
-	- Interpolating Subdivision for Meshes with Arbitrary Topology, D. Zorin, P. Schröder, W. Sweldens
-	- Incremental Subdivision for Triangle Meshes, H. Pakdel, F. Samavati
-	- Freestyle: Sculpting Meshes with Self-Adaptive Topology, L. Stanculescu, R. Chaine, M. Cani
-	- Dynamic Subdivision Sculpting, R. Hernandez
-- Trimming and mesh reconstruction
-	- An Advancing Front Delaunay Triangulation Algorithm Designed for Robustness, D. Mavriplis
-	- Filling Holes in Meshes, P. Liepa
-	- Triangulation by Ear Clipping, D. Eberly
-
-- Mesh construction from isosurfaces (cf. Dilay’s Remesh tool and Sketch → Mesh conversion)
-	- Constrained Elastic Surface Nets: Generating Smooth Models from Binary Segmented Data, S. Gibson
-	- Dual Marching Cubes, G. Nielson
-	- Marching Cubes 33: Construction of Topologically Correct Isosurfaces, E. Chernyaev
- 
----
-
 # IDE / Language
 ### Setup
 - [Git](https://git-scm.com/docs/git) + [Visual Studio Code](https://code.visualstudio.com) + [C++ and MinGW-w64 in Visual Studio Code](https://code.visualstudio.com/docs/cpp/config-mingw)
