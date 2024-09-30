@@ -33,6 +33,13 @@ struct Vector3D
 		return ((&x)[i]);
 	}*/
 
+	/*
+	[] is accessing the value at the address of x (&x) 
+	+ the offset given through the index i.
+
+	(&x)[0] == x (&x)[1] == y (&x)[2] == z
+	*/
+
 	Vector3D& operator *=(float s)                      // Overloaded Operator *= Scalar Multiplication
 	{
 		x *= s;
@@ -50,7 +57,7 @@ struct Vector3D
 		return (*this);
 	}
 
-	Vector3D& operator +=(const Vector3D& v)            // vii += v  (function)  vii   
+	Vector3D& operator +=(const Vector3D& v)         
 	{
 		x += v.x;
 		y += v.y;
@@ -67,10 +74,12 @@ struct Vector3D
 	}
 };
 
-
-
-
-
+/*
+*this = Object and  this = &Object.
+The object's address (&x, &y, &z) of the struct is available from within the member function as the this pointer.
+The expression return *this is commonly used to return the current object from a member function.
+While the overload operator function goes inside struct, the inline overload operator goes outside of struct.
+*/
 
 inline Vector3D operator *(const Vector3D& v, float s)
 {
@@ -81,7 +90,6 @@ inline Vector3D operator /(const Vector3D& v, float s)
 {
 	s = 1.0F / s;
 	return (Vector3D(v.x * s, v.y * s, v.z * s));
-	//return (Vector3D(v.x / s, v.y / s, v.z / s));
 }
 
 inline float magnitude(const Vector3D& v)          
@@ -99,24 +107,18 @@ inline Vector3D operator -(const Vector3D& v)
 	return (Vector3D(-v.x, -v.y, -v.z));
 }
 
-inline Vector3D operator +(const Vector3D& v, const Vector3D& vii)
+inline Vector3D operator +(const Vector3D& v, const Vector3D& v2)
 {
-	return (Vector3D(v.x + vii.x, v.y + vii.y, v.z + vii.z));
+	return (Vector3D(v.x + v2.x, v.y + v2.y, v.z + v2.z));
 }
 
-inline Vector3D operator -(const Vector3D& v, const Vector3D& vii)
+inline Vector3D operator -(const Vector3D& v, const Vector3D& v2)
 {
-	return (Vector3D(v.x - vii.x, v.y - vii.y, v.z - vii.z));
+	return (Vector3D(v.x - v2.x, v.y - v2.y, v.z - v2.z));
 }
-
-
-
-
-
 
 int main()
 {	
-	// Vector3D v; float v.x, v.y, v.z;
     Vector3D v(1, 2, 3); 
 
 	// Components
@@ -125,45 +127,39 @@ int main()
 	// Index
 	std::cout << v[0] << " " << v[1] << " " << v[2] << "\n";
     
-
-
 	// Magnitude
 	std::cout << magnitude(v) << std::endl;
 
-	// Normalization (magnitude=1, direction)
+	// Unit Vector
 	v = normalize(v);
 	std::cout << v.x << " " << v.y << " " << v.z << "\n";
 	std::cout << magnitude(v) << std::endl;
 
 	// Opposite direction
-	Vector3D vi = -v;
-	std::cout << vi.x << " " << vi.y << " " << vi.z << "\n";
+	Vector3D v1 = -v;
+	std::cout << v1.x << " " << v1.y << " " << v1.z << "\n";
 
-
-
-	// Multiplication
+	// Multiplication and Division
     v *= 10;
 	std::cout << v.x << " " << v.y << " " << v.z << "\n";
 
     v /= 10;
 	std::cout << v.x << " " << v.y << " " << v.z << "\n";
 
-    Vector3D vii = v*2;
-    std::cout << vii.x << " " << vii.y << " " << vii.z << "\n";
+    Vector3D v2 = v*2;
+    std::cout << v2.x << " " << v2.y << " " << v2.z << "\n";
 
-    vii = v/2;
-    std::cout << vii.x << " " << vii.y << " " << vii.z << "\n";
-
-
+ 	v2 = v/2;
+    std::cout << v2.x << " " << v2.y << " " << v2.z << "\n";
 
 	// Addition
-	Vector3D viii(1, 2, 3);
-	Vector3D viv(2, 3, 4);
-	viv += viii; // viv = viv + viii
-	std::cout << viv.x << " " << viv.y << " " << viv.z << "\n";
+	Vector3D v3(1, 2, 3);
+	Vector3D v4(2, 3, 4);
+	v4 += v3;
+	std::cout << v4.x << " " << v4.y << " " << v4.z << "\n";
 
-	Vector3D vv(1, 2, 3);
-	Vector3D vvi(2, 3, 4);
-	Vector3D vvii = vvi + vv;
-	std::cout << vvii.x << " " << vvii.y << " " << vvii.z << "\n";
+	Vector3D v5(1, 2, 3);
+	Vector3D v6(2, 3, 4);
+	Vector3D  v7 = v6 + v5;
+	std::cout <<  v7.x << " " <<  v7.y << " " <<  v7.z << "\n";
 }
