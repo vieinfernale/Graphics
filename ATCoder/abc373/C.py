@@ -6,7 +6,7 @@ def solution():
     L = []
     L2 = []
     
-    for x in s.split(" "):
+    for x in s.split(" "): # split the integers in the string s and add to the list L
         L.append(int(x))
     
     for x in s2.split(" "):
