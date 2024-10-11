@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
-#include <iostream>
-#include <string>
-#include <vector>
-#include <array>
-#include <map>
+#define int long long // int = long long
+using namespace std;
 
 struct data
 {
@@ -17,7 +14,7 @@ data solution()
     return d;
 }
 
-int main()
+signed main()
 {
     data d = solution();
 
