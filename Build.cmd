@@ -7,7 +7,7 @@ set PROJECT_DIRECTORY=%~dp0
 g++ Main.cpp -o Main ^
 -I"%PROJECT_DIRECTORY%/include"
 :: -L"%PROJECT_DIRECTORY%/lib" ^
-:: -lglfw3 -lglew32 -lassimp -lopengl32 -luser32 -lgdi32 -lshell32
+:: -llibname
 
 pause
 :: Script to Compile & Run the C++ file
