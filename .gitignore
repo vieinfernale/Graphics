@@ -1,5 +1,13 @@
-# binaries and vscode
-*.exe
-*.vscode
+# Directories
+## Visual Studio
+.vs/
+.vscode/
 
+# Files
+.exe
+## Visual Studio
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
 
